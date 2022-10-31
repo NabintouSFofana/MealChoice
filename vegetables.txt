@@ -1,0 +1,5 @@
+
+1 ==> onion
+2 ==> tomate
+3 ==> garlic
+4 ==> bell pepper

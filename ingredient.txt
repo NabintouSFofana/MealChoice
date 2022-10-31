@@ -1,0 +1,5 @@
+
+*--------> chicken     |     *--------> bell pepper     |     *--------> rice
+*--------> egg         |     *--------> onion           |     *--------> pasta
+*--------> beef        |     *--------> tomato          |     *--------> bread
+*--------> fish        |     *--------> garlic          |     *--------> Potato

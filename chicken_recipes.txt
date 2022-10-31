@@ -1,0 +1,5 @@
+
+1 ==> chicken & rice
+2 ==> vegetables chicken soup
+3 ==> tomato pasta & chicken ball
+4 ==> fried chicken breast with lettuce salade

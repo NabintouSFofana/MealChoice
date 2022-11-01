@@ -53,47 +53,52 @@ class Meals:
             # print('Bye, see you soon!')
 
     def ingredient(self):
-        print(f"\nChoose at least '1' ingredient from the first row, "
-              f"\n'2' ingredients from the second row, and "
-              f"\n'1' ingredient from the third row."
-              f"\nto start. Add coma between them. Enter:")
-        with open('ingredient.txt') as f:
-            contents = f.read()
-            print(contents)
-            print("")
-            ingredient1 = input('>')
-            ingredient2 = input('>')
-            ingredient3 = input('>')
-            ingredient4 = input('>')
+        i = 0
 
-            for items in ingredients:
-                if ingredient1 in ingredients:
-                    selected_ingredient.append(ingredient1)
-                    selected_ingredient.append(ingredient2)
-                    selected_ingredient.append(ingredient3)
-                    selected_ingredient.append(ingredient4)
+        for i in range(5):
+            print(f"\nChoose at least '1' ingredient from the first row, "
+                  f"\n'2' ingredients from the second row, and "
+                  f"\n'1' ingredient from the third row."
+                  f"\nto start. Add coma between them. Enter:")
+            with open('ingredient.txt') as f:
+                contents = f.read()
+                print(contents)
+                print("")
+                ingredient1 = input('>')
+                ingredient2 = input('>')
+                ingredient3 = input('>')
+                ingredient4 = input('>')
 
-                    all_ingredients = ingredient1 + ", " + ingredient2 + ", " + ingredient3 + " and " + ingredient4
+                for items in ingredients:
+                    if ingredient1 in ingredients:
+                        selected_ingredient.append(ingredient1)
+                        selected_ingredient.append(ingredient2)
+                        selected_ingredient.append(ingredient3)
+                        selected_ingredient.append(ingredient4)
 
-                    print(f"\nOk,you have {all_ingredients}.")
-                    print("\nHere are some meals you can cook")
-                    f = open("meal.txt", "w")
-                    f = open("meal.txt", "a")
-                    mydata = [
-                        [f"{ingredient1}", f"{recipes}"]
-                    ]
-                    head = ["Ingredients", "Meal ideas"]
-                    f.write(
-                        tabulate(mydata, headers=head, tablefmt="grid"))
-                    f = open("meal.txt", "r")
-                    print(f.read())
-                    f.close()
-                    with open('cooking_instructions.txt') as f:
-                        contents = f.read()
-                        print(contents)
-                    break
-                else:
-                    return 'Try again'
+                        all_ingredients = ingredient1 + ", " + ingredient2 + ", " + ingredient3 + " and " + ingredient4
+
+                        print(f"\nOk,you have {all_ingredients}.")
+                        print("\nHere are some meals you can cook")
+                        f = open("meal.txt", "w")
+                        f = open("meal.txt", "a")
+                        mydata = [
+                            [f"{ingredient1}", f"{recipes}"]
+                        ]
+                        head = ["Ingredients", "Meal ideas"]
+                        f.write(
+                            tabulate(mydata, headers=head, tablefmt="grid"))
+                        f = open("meal.txt", "r")
+                        print(f.read())
+                        f.close()
+                        with open('cooking_instructions.txt') as f:
+                            contents = f.read()
+                            print(contents)
+                            return 'Good! See you soon'
+                    else:
+                        print("Try again please")
+                        return meal.ingredient()
+                break
 
     def recipes(self):
 
@@ -103,24 +108,6 @@ class Meals:
                 print(item)
                 i += 1
                 break
-
-
-'''
-  f = open("meal.txt", "w")
-                    f = open("meal.txt", "a")
-                    mydata = [
-                        [f"{ingredient1}", f"{recipes}"]
-                    ]
-                    head = ["Ingredients", "Meal ideas"]
-                    f.write(
-                        tabulate(mydata, headers=head, tablefmt="grid"))
-                    f = open("meal.txt", "r")
-                    print(f.read())
-                    f.close()
-                    with open('cooking_instructions.txt') as f:
-                        contents = f.read()
-                        print(contents)
-'''
 
 
 def shop(self):
@@ -142,5 +129,3 @@ meal = Meals()
 print(meal.ingredient())
 
 # print(meal.recipe())
-
-
